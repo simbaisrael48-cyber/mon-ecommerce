@@ -5,33 +5,89 @@ session_start();
 require "config/database.php";
 
 
+// ========================================
+// INITIALISATION DU PANIER
+// ========================================
+
 if (!isset($_SESSION["panier"])) {
-
     $_SESSION["panier"] = [];
-
 }
 
 
+// ========================================
+// GESTION DES ACTIONS DU PANIER
+// ========================================
 
 if (
     isset($_POST["action"]) &&
-    $_POST["action"] === "ajouter" &&
     isset($_POST["id"])
 ) {
 
     $id = (int) $_POST["id"];
+    $action = $_POST["action"];
 
-    if (isset($_SESSION["panier"][$id])) {
-        $_SESSION["panier"][$id]++;
-    } else {
-        $_SESSION["panier"][$id] = 1;
+
+    // AJOUTER
+    if ($action === "ajouter") {
+
+        if (isset($_SESSION["panier"][$id])) {
+            $_SESSION["panier"][$id]++;
+        } else {
+            $_SESSION["panier"][$id] = 1;
+        }
+
+        header("Location: panier.php");
+        exit;
     }
 
-    header("Location: panier.php");
-    exit;
+
+    // PLUS
+    if ($action === "plus") {
+
+        if (isset($_SESSION["panier"][$id])) {
+            $_SESSION["panier"][$id]++;
+        }
+
+        header("Location: panier.php");
+        exit;
+    }
+
+
+    // MOINS
+    if ($action === "moins") {
+
+        if (isset($_SESSION["panier"][$id])) {
+
+            $_SESSION["panier"][$id]--;
+
+            if ($_SESSION["panier"][$id] <= 0) {
+                unset($_SESSION["panier"][$id]);
+            }
+        }
+
+        header("Location: panier.php");
+        exit;
+    }
+
+
+    // SUPPRIMER
+    if ($action === "supprimer") {
+
+        if (isset($_SESSION["panier"][$id])) {
+            unset($_SESSION["panier"][$id]);
+        }
+
+        header("Location: panier.php");
+        exit;
+    }
 }
 
 
+// ========================================
+// CALCUL DU TOTAL GENERAL
+// ========================================
+
+$totalPanier = 0;
 
 ?>
 
@@ -41,181 +97,327 @@ if (
 <head>
 
     <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Mon panier - Smartbrain Business</title>
+
     <link rel="stylesheet" href="style.css">
 
-    <title>Mon panier</title>
 
 </head>
 
+
 <body>
 
-    <header>
-            <div class="fixation">
-                <nav>
-                    <ul class="menu">
-                        <li> <a href="produits.php">Accueil</a></li>
-                        <li> <a href="boutique.php">Boutique</a></li>
-                        <li> <a href="panier.php">Panier</a></li>    
-                    
-                    </ul>
-                </nav>
+
+<!-- ========================================
+     NAVBAR
+======================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-text">
+
+            <span>Smatbrain</span>
+            <span>Business</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="link">
+
+        <ul>
+
+            <li>
+                <a href="produits.php">
+                    Accueil
+                </a>
+            </li>
+
+            <li>
+                <a href="boutique.php">
+                    Boutique
+                </a>
+            </li>
+
+            <li>
+                <a href="panier.php">
+                    Panier
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Categories
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Avis Client
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+<!-- ========================================
+     TITRE DU PANIER
+======================================== -->
+
+<section class="panier">
+
+    <h1>
+        Mon panier
+    </h1>
+
+    <br>
+
+    <p>
+        Retrouvez ici votre sélection de produits.
+        Vérifiez les articles,
+        <br>
+        les quantités et les prix avant de finaliser
+        votre <span>commande.</span>
+    </p>
+
+</section>
+
+<br>
+
+
+<!-- ========================================
+     PANIER
+======================================== -->
+
+<?php if (empty($_SESSION["panier"])) { ?>
+
+    <div class="panier-vide">
+
+        <h2>
+            Votre panier est vide.
+        </h2>
+
+        <br>
+
+        <a href="boutique.php">
+            Découvrir nos produits
+        </a>
+
+    </div>
+
+<?php } else { ?>
+
+
+    <?php foreach ($_SESSION["panier"] as $id => $quantite) { ?>
+
+
+        <?php
+
+        $sql = "SELECT * FROM produits1 WHERE id = :id";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->execute([
+            "id" => $id
+        ]);
+
+        $produit = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+        if (!$produit) {
+            continue;
+        }
+
+
+        $prix = (float) $produit["Prix"];
+
+        $sousTotal = $prix * $quantite;
+
+        $totalPanier += $sousTotal;
+
+        ?>
+
+
+        <!-- ========================================
+             ARTICLE
+        ======================================== -->
+
+        <div class="article_panier">
+
+
+            <div>
+
+                <img
+                    src="images/<?php echo htmlspecialchars($produit["Image"]); ?>"
+                    width="150"
+                    alt="<?php echo htmlspecialchars($produit["Nom"]); ?>"
+                >
+
             </div>
-        </header><br><br><br><br>
-    
-    <div class="panier">
-        <h1>Mon panier </h1><br>
-        <p>Retrouvez ici votre sélection de produits.
-            Vérifiez les articles, <br>les quantités et les prix 
-            avant de finaliser votre <span>commande.</span>
-        </p>
-    </div> <br>
-    
-    <?php foreach ($_SESSION["panier"] as $id => $quantite) {
-
-    $sql = "SELECT * FROM produits1 WHERE id = :id";
-
-    $stmt = $conn->prepare($sql);
-
-    $stmt->execute([
-        "id" => $id
-    ]);
-
-    $produit = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if (!$produit) {
-        continue;
-    }
-
-    $total = 0;
 
 
-    $prix = (float) $produit["Prix"];
+            <div class="detail">
 
-    $sousTotal = $prix * $quantite;
-
-    $total += $sousTotal;
-
-// CALCUL DU BOUTON PLUS
-    if (
-        isset($_POST["action"]) &&
-        $_POST["action"] === "plus" &&
-        isset($_POST["id"])
-    ) {
-
-        $id = (int) $_POST["id"];
-
-        if (isset($_SESSION["panier"][$id])) {
-            $_SESSION["panier"][$id]++;
-        }
-
-    header("Location: panier.php");
-    exit;
-}
-// CALCUL DU BOUTON MOINS
-if (
-    isset($_POST["action"]) &&
-    $_POST["action"] === "moins" &&
-    isset($_POST["id"])
-) {
-
-    $id = (int) $_POST["id"];
-    if (isset($_SESSION["panier"][$id])) {
-
-        $_SESSION["panier"][$id]--;
-
-        if ($_SESSION["panier"][$id] <= 0) {
-            unset($_SESSION["panier"][$id]);
-        }
-    }
-
-    header("Location: panier.php");
-    exit;
-}
-// BOUTON SUPPRIMER
-if (
-    isset($_POST["action"]) &&
-    $_POST["action"] === "supprimer" &&
-    isset($_POST["id"])
-) {
-
-    $id = (int) $_POST["id"];
-
-    if (isset($_SESSION["panier"][$id])) {
-        unset($_SESSION["panier"][$id]);
-    }
-
-    header("Location: panier.php");
-    exit;
-}
-
-// Calcul du total du panier
+                <h2>
+                    <?php echo htmlspecialchars($produit["Nom"]); ?>
+                </h2>
 
 
-?>
+                <p>
 
-    <div class="article_panier">
-        <div>
-            <img
-                src="images/<?php echo htmlspecialchars($produit["Image"]); ?>"
-                width="150"
-                alt="<?php echo htmlspecialchars($produit["Nom"]); ?>"
-            >
+                    Prix :
+
+                    <?php echo htmlspecialchars($produit["Prix"]); ?> $
+
+                </p>
+
+
+                <p>
+
+                    Quantité :
+
+                    <?php echo $quantite; ?>
+
+                </p>
+
+
+                <h2>
+
+                    Sous-total :
+
+                    <?php echo number_format($sousTotal, 2); ?> $
+
+                </h2>
+
+
+                <!-- ========================================
+                     BOUTONS QUANTITE
+                ======================================== -->
+
+                <div class="grotte">
+
+
+                    <!-- MOINS -->
+
+                    <form action="panier.php" method="POST">
+
+                        <input
+                            type="hidden"
+                            name="id"
+                            value="<?php echo $id; ?>"
+                        >
+
+                        <button
+                            class="btn3"
+                            type="submit"
+                            name="action"
+                            value="moins"
+                        >
+                            −
+                        </button>
+
+                    </form>
+
+
+                    <!-- PLUS -->
+
+                    <form action="panier.php" method="POST">
+
+                        <input
+                            type="hidden"
+                            name="id"
+                            value="<?php echo $id; ?>"
+                        >
+
+                        <button
+                            class="btn3"
+                            type="submit"
+                            name="action"
+                            value="plus"
+                        >
+                            +
+                        </button>
+
+                    </form>
+
+
+                    <!-- SUPPRIMER -->
+
+                    <form action="panier.php" method="POST">
+
+                        <input
+                            type="hidden"
+                            name="id"
+                            value="<?php echo $id; ?>"
+                        >
+
+                        <button
+                            class="btn2X"
+                            type="submit"
+                            name="action"
+                            value="supprimer"
+                        >
+                            Supprimer
+                        </button>
+
+                    </form>
+
+
+                </div>
+
+
+                <br>
+
+
+                <button class="btn2">
+                    Commander
+                </button>
+
+                <br>
+                <br>
+
+
+                <a href="boutique.php">
+                    Continuer vos achats
+                </a>
+
+
+            </div>
+
         </div>
-        
-        <div class="detail">
-            <h2>
-                <?php echo htmlspecialchars($produit["Nom"]); ?>
-            </h2>
 
-            <p>
-                Prix :
-                <?php echo $produit["Prix"]; ?> $
-            </p>
 
-            <p>
-                Quantité :
-                <?php echo $quantite; ?>
-            </p>
+    <?php } ?>
 
-            <h2>
-                Total :
-                <?php echo $total; ?> $
-            </h2>
 
-    <div class="grotte">
-            
-        <form action="panier.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $id; ?>">
-            <button class="btn3" type="submit" name="action" value="moins">
-                −
-            </button>
-        </form>
+    <!-- ========================================
+         TOTAL GENERAL
+    ======================================== -->
 
-        <form action="panier.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $id; ?>">
-            <button class="btn3" type="submit" name="action" value="plus">
-                +
-            </button>
-        </form>
+    <div class="total-panier">
 
-        <form action="panier.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $id; ?>">
-            <button class="btn2X" type="submit" name="action" value="supprimer">
-                Supprimer
-            </button>
-        </form>
+        <h2>
+            Total du panier :
+            <?php echo number_format($totalPanier, 2); ?> $
+        </h2>
+
     </div>
 
 
-
-            <button class="btn2">
-                Commander
-            </button> <br><br>
-
-            <a href="boutique.php">Continuer votre achat</a>
-        </div>
-        
-    </div>
-
-   
 <?php } ?>
+
+
+</body>
+
+</html>
