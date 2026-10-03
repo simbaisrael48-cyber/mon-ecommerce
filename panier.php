@@ -5,18 +5,18 @@ session_start();
 require "config/database.php";
 
 
-// ========================================
+//
 // INITIALISATION DU PANIER
-// ========================================
+//
 
 if (!isset($_SESSION["panier"])) {
     $_SESSION["panier"] = [];
 }
 
 
-// ========================================
+//
 // GESTION DES ACTIONS DU PANIER
-// ========================================
+//
 
 if (
     isset($_POST["action"]) &&
@@ -83,9 +83,9 @@ if (
 }
 
 
-// ========================================
+//
 // CALCUL DU TOTAL GENERAL
-// ========================================
+//
 
 $totalPanier = 0;
 
@@ -112,9 +112,7 @@ $totalPanier = 0;
 <body>
 
 
-<!-- ========================================
-     NAVBAR
-======================================== -->
+<!-- NAVBAR -->
 
 <header class="navbar">
 
@@ -131,49 +129,18 @@ $totalPanier = 0;
 
 
     <div class="link">
-
-        <ul>
-
-            <li>
-                <a href="produits.php">
-                    Accueil
-                </a>
-            </li>
-
-            <li>
-                <a href="boutique.php">
-                    Boutique
-                </a>
-            </li>
-
-            <li>
-                <a href="panier.php">
-                    Panier
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    Categories
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    Avis Client
-                </a>
-            </li>
-
+        <ul class="nav-links">
+            <li><a href="produits.php">Accueil</a> </li>
+            <li><a href="boutique.php">Boutique</a></li>
+            <li><a href="panier.php">Panier</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="avis-clients.php">Avis-client</a></li>
         </ul>
-
     </div>
-
 </header>
 
 
-<!-- ========================================
-     TITRE DU PANIER
-======================================== -->
+<!-- TITRE DU PANIER -->
 
 <section class="panier">
 
@@ -196,9 +163,7 @@ $totalPanier = 0;
 <br>
 
 
-<!-- ========================================
-     PANIER
-======================================== -->
+<!-- PANIER -->
 
 <?php if (empty($_SESSION["panier"])) { ?>
 
@@ -249,9 +214,7 @@ $totalPanier = 0;
         ?>
 
 
-        <!-- ========================================
-             ARTICLE
-        ======================================== -->
+        <!-- ARTICLE -->
 
         <div class="article_panier">
 
@@ -301,9 +264,7 @@ $totalPanier = 0;
                 </h2>
 
 
-                <!-- ========================================
-                     BOUTONS QUANTITE
-                ======================================== -->
+                <!-- BOUTONS QUANTITE -->
 
                 <div class="grotte">
 
@@ -380,9 +341,8 @@ $totalPanier = 0;
                 <br>
 
 
-                <button class="btn2">
-                    Commander
-                </button>
+                
+                <a href="commande.php" class="btn2">Commander</a> 
 
                 <br>
                 <br>
@@ -401,9 +361,7 @@ $totalPanier = 0;
     <?php } ?>
 
 
-    <!-- ========================================
-         TOTAL GENERAL
-    ======================================== -->
+    <!-- TOTAL GENERAL -->
 
     <div class="total-panier">
 

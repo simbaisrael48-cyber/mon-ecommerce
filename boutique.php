@@ -21,24 +21,24 @@
 
     <!-- Navigation -->
     <div class="link">
-        <ul>
-            <li><a href="produits.php">Accueil</a></li>
+        <ul class="nav-links">
+            <li><a href="produits.php">Accueil</a> </li>
             <li><a href="boutique.php">Boutique</a></li>
             <li><a href="panier.php">Panier</a></li>
-            <li><a href="#">Catégories</a></li>
-            <li><a href="#">Avis Client</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="avis-clients.php">Avis-clients</a></li>
         </ul>
     </div>
 
-</header>
-
+</header><br><br><br><br><br><br>
+    
 <!-- Titre de la boutique -->
 <div class="title_boutique">
-    <h1>Faites vous <span>plaisir</span></h1>
+    <h1>Faites vous <span>plaisir</span></h1><br>
 
     <p>
         Découvrez notre sélection de matériels informatiques,
-        électriques et électroniques.
+        électriques et électroniques.<br>
         Trouvez facilement les équipements adaptés à vos besoins
         et à vos projets.
     </p>
