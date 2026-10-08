@@ -241,10 +241,9 @@ $resultat = $conn->query($sql);
         </h3>
 
         <p>
-            Notre boutique en ligne est accessible 24h/24, vous permettant
-            de passer vos commandes à tout moment.
-
-            Nous mettons tout en œuvre pour assurer une livraison efficace.
+            Nous accordons une grande importance à la rapidité de livraison afin que 
+            vous puissiez recevoir vos commandes dans les meilleurs délais.
+             
         </p>
     </div>
 
@@ -305,12 +304,12 @@ $resultat = $conn->query($sql);
         <br>
 
         <img
-            src="/mon-ecommerce/images/Livraison rapide.svg"
+            src="/mon-ecommerce/images/porte-ouverte (1).svg"
             alt="Livraison rapide"
         >
 
         <h3>
-            Une livraison pratique 24h/24
+            Une disponilité de 24h/24
         </h3>
 
         <p>
@@ -468,35 +467,29 @@ $resultat = $conn->query($sql);
             <ul>
 
                 <li>
-                    <a href="produits.php">
-                        Accueil
-                    </a>
+                    <a href="produits.php">Accueil</a>
+                
                 </li>
 
                 <li>
-                    <a href="boutique.php">
-                        Boutique
-                    </a>
+                    <a href="boutique.php">  Boutique </a>
+                    
                 </li>
 
                 <li>
-                    <a href="panier.php">
-                        Panier
-                    </a>
+                    <a href="panier.php">Panier</a>
+                    
                 </li>
 
                 <li>
-                    <a href="contact.php">
-                        Contact
-                    </a>
+                    <a href="Contact.php">  Contact </a>
+                    
                 </li>
 
                 <li>
-                    <a href="avis-clients.php">
-                        Avis-clients
-                    </a>
+                    <a href="avis-clients.php">Avis-clients</a>
+                    
                 </li>
-
             </ul>
 
         </div>
@@ -516,25 +509,7 @@ $resultat = $conn->query($sql);
 
                 <li>
                     <a href="#">
-                        Ordinateur
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Smartphones
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Accessoires
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Téléphone
+                        Informatique
                     </a>
                 </li>
 
@@ -548,36 +523,6 @@ $resultat = $conn->query($sql);
 
         </div>
 
-
-        <!-- COLONNE 4 -->
-
-        <div class="footer-column">
-
-            <h1>
-                Entreprise
-            </h1>
-
-            <br>
-
-            <ul>
-
-                <li>
-                    <a href="#">
-                        À propos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Notre blog
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-
         <!-- COLONNE 5 -->
 
         <div class="footer-column">
@@ -590,24 +535,16 @@ $resultat = $conn->query($sql);
 
             <div class="payment-methods">
 
-                <span>
-                    <i class="fa-brands fa-cc-visa"></i>
+                <span  class="mobile-money">
+                    Orange Money
                 </span>
 
-                <span>
-                    <i class="fa-brands fa-cc-mastercard"></i>
-                </span>
-
-                <span>
-                    <i class="fa-brands fa-paypal"></i>
-                </span>
-
-                <span>
-                    <i class="fa-brands fa-apple-pay"></i>
+                <span  class="mobile-money">
+                    Airtel Money
                 </span>
 
                 <span class="mobile-money">
-                    Mobile Money
+                    AfriMoney
                 </span>
 
             </div>

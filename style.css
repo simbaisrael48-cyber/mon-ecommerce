@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    box-sizing: border-box;
 
 }
 
@@ -20,39 +19,13 @@ html {
 
 /* MENU / NAVIGATION */
 
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    padding: 0 50px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    z-index: 1000;
-}
 
-.nav-links {
-    display: flex;
-    gap: 40px;
-    margin-left: 180%;
-    list-style: none;
-}
 
-.nav-links li a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    font-weight: 500;
-}
 
-.nav-links li a:hover {
-    color: #007bff;
-    transform: translateY(-6px);
-    
-}
 
+/* ======================================================
+   NAVBAR
+   ====================================================== */
 
 /* SECTION TEXTE */
 
@@ -979,194 +952,6 @@ h6 a{
 
 /*  TITRE DE LA COMMANDE  */
 
-#commande-section {
-    width: 90%;
-    max-width: 750px;
-    margin: 50px auto 25px;
-    text-align: center;
-}
-
-#commande-section h2 {
-    font-size: 32px;
-    color: #12345a;
-    margin-bottom: 10px;
-}
-
-#commande-section p {
-    color: #667085;
-    font-size: 16px;
-}
-
-
-/*  FORMULAIRE */
-
-body > form {
-    width: 90%;
-    max-width: 680px;
-    margin: 0 auto 50px;
-    padding: 40px;
-
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
-}
-
-body > form label {
-    display: inline-block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #243b53;
-}
-
-body > form input {
-    width: 100%;
-    height: 50px;
-    padding: 12px 15px;
-    margin-bottom: 20px;
-
-    border: 1px solid #d5deea;
-    border-radius: 8px;
-    background: #fff;
-
-    font-size: 15px;
-    outline: none;
-    transition: 0.3s;
-}
-
-body > form input:focus {
-    border-color: #1687e8;
-    box-shadow: 0 0 0 3px rgba(22, 135, 232, 0.12);
-}
-
-
-/*  BOUTON VALIDER  */
-
-body > form button {
-    width: 100%;
-    padding: 15px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: #0879d9;
-    color: #fff;
-
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-body > form button:hover {
-    background: #0562b0;
-    transform: translateY(-2px);
-}
-
-
-/*  CONFIRMATION DE COMMANDE  */
-
-.confirmation-commande {
-    width: 90%;
-    max-width: 750px;
-    margin: 35px auto;
-    padding: 30px;
-
-    background: #e9f9ef;
-    border: 1px solid #b7ebc6;
-    border-radius: 12px;
-    text-align: center;
-}
-
-.confirmation-commande h2 {
-    color: #16803c;
-    margin-bottom: 12px;
-}
-
-.confirmation-commande p {
-    margin-bottom: 12px;
-}
-
-.confirmation-commande a {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 22px;
-
-    background: #0879d9;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-}
-
-.confirmation-commande a:hover {
-    background: #0562b0;
-}
-
-
-/*  TITRE DES PRODUITS ACHETÉS  */
-
-body > h3 {
-    width: 90%;
-    max-width: 1100px;
-    margin: 35px auto 15px;
-    color: #12345a;
-    font-size: 25px;
-}
-
-
-/*  TABLEAU DES PRODUITS  */
-
-body > table {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto 35px;
-
-    border-collapse: collapse;
-    background: #fff;
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-}
-
-body > table thead {
-    background: #0879d9;
-    color: #fff;
-}
-
-body > table th,
-body > table td {
-    padding: 15px;
-    text-align: center;
-    border: 1px solid #e5eaf0;
-}
-
-body > table img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-}
-
-body > table tbody tr:nth-child(even) {
-    background: #f4f8fc;
-}
-
-body > table tfoot {
-    background: #e5f2ff;
-    color: #12345a;
-    font-weight: bold;
-}
-
-
-/*  MESSAGE DE SUCCÈS  */
-
-body > p {
-    width: 90%;
-    max-width: 750px;
-    margin: 20px auto;
-    text-align: center;
-    color: #16803c;
-}
 
 
 
@@ -1552,6 +1337,50 @@ body > p {
     margin: 0 !important;
     color: #777;
 }
+
+/* SECTION 3 */
+
+#section3 {
+    background: #000512fc;
+    width: 100%;
+    text-align: center;
+    height: 990%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+}
+#section3 p{
+    text-align: center;
+    color: white;
+    font-size: 80%;
+    margin-bottom: 5%;
+
+}
+#section3 h1{
+    color: white;
+    font-size: 300%;
+    font-weight: normal;
+
+}
+#section3 button{
+    background: #417eef;
+    color:white;
+    padding: 12px 29px;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+#section3 button:hover{     
+    transform: scale(1.05);
+}
+#section3 a {
+    text-decoration: none;
+    color: white;
+}
+
+
 
 
 /* VERSION TÉLÉPHONE */

@@ -34,13 +34,14 @@
     
 <!-- Titre de la boutique -->
 <div class="title_boutique">
-    <h1>Faites vous <span>plaisir</span></h1><br>
+    <h1>Bienvenue dans notre <span>boutique</span></h1><br>
 
     <p>
         Découvrez notre sélection de matériels informatiques,
         électriques et électroniques.<br>
         Trouvez facilement les équipements adaptés à vos besoins
         et à vos projets.
+        
     </p>
 </div>
 
@@ -221,8 +222,13 @@ $resultat = $conn->query($sql);
                 </li>
 
                 <li>
-                    <a href="#">
-                        Catégories
+                    <a href="contact.php">
+                        Contact
+                    </a>
+                </li>
+                <li>
+                    <a href="avis-clients.php">
+                        Avis-clients
                     </a>
                 </li>
 
@@ -240,58 +246,11 @@ $resultat = $conn->query($sql);
             <br>
 
             <ul>
-
-                <li>
-                    <a href="#">Ordinateur</a>
-                </li>
-
-                <li>
-                    <a href="#">Smartphones</a>
-                </li>
-
-                <li>
-                    <a href="#">Accessoires</a>
-                </li>
-
-                <li>
-                    <a href="#">Téléphone</a>
-                </li>
-
-                <li>
-                    <a href="#">Électronique</a>
-                </li>
-
+                <li><a href="">Informatique</a></li>                 
+                <li><a href="#">Électronique</a></li>    
             </ul>
 
         </div>
-
-
-        <!-- Entreprise -->
-
-        <div class="footer-column">
-
-            <h1>Entreprise</h1>
-
-            <br>
-
-            <ul>
-
-                <li>
-                    <a href="#">
-                        À propos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Notre blog
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
 
         <!-- Paiements -->
 
@@ -303,24 +262,16 @@ $resultat = $conn->query($sql);
 
             <div class="payment-methods">
 
-                <span>
-                    <i class="fa-brands fa-cc-visa"></i>
+                <span  class="mobile-money">
+                    Orange Money
                 </span>
 
-                <span>
-                    <i class="fa-brands fa-cc-mastercard"></i>
-                </span>
-
-                <span>
-                    <i class="fa-brands fa-paypal"></i>
-                </span>
-
-                <span>
-                    <i class="fa-brands fa-apple-pay"></i>
+                <span  class="mobile-money">
+                    Airtel Money
                 </span>
 
                 <span class="mobile-money">
-                    Mobile Money
+                    AfriMoney
                 </span>
 
             </div>

@@ -375,7 +375,7 @@ $totalPanier = 0;
 
 <?php } ?>
 
-
+    
 </body>
 
 </html>

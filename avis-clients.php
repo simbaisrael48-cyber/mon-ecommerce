@@ -373,11 +373,11 @@ $totalAvis = $statistiques["total"] ?? 0;
     </p>
 
     <h1>
-        Découvrez facilement nos produits<br>
-        informatique et électronique,<br>
-        comparez vos choix et <br>
-        commandez en toute simplicité.<br>
-        Tout à Kinshasa.
+        Nous vous invitons à découvrir notre boutique <br> et à parcourir  
+        nos différents produits. Prenez quelques minutes<br>  pour visiter notre page, 
+        découvrir ce que nous proposons <br> et choisir ce qui vous convient.<br> 
+
+         N’attendez plus, rendez-vous sur notre page boutique !
     </h1>
 
     <br><br><br>
@@ -522,8 +522,13 @@ $totalAvis = $statistiques["total"] ?? 0;
                 </li>
 
                 <li>
-                    <a href="#">
-                        Catégories
+                    <a href="contact.php">
+                        Contact
+                    </a>
+                </li>
+                <li>
+                    <a href="avis-clients.php">
+                        Avis-clients
                     </a>
                 </li>
 
@@ -579,30 +584,7 @@ $totalAvis = $statistiques["total"] ?? 0;
         </div>
 
 
-        <!-- COLONNE 4 -->
-
-        <div class="footer-column">
-
-            <h1>Entreprise </h1>    
-            <br>
-            
-            <ul>
-
-                <li>
-                    <a href="#">
-                        À propos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Notre blog
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
+        
 
 
         <!-- COLONNE 5 -->
@@ -615,27 +597,18 @@ $totalAvis = $statistiques["total"] ?? 0;
 
             <br>
 
-            <div class="payment-methods">
+             <div class="payment-methods">
 
-                <span>
-                    <i class="fa-brands fa-cc-visa"></i>
+                <span  class="mobile-money">
+                    Orange Money
                 </span>
 
-                <span>
-                    <i class="fa-brands fa-cc-mastercard"></i>
-                </span>
-
-                <span>
-                    <i class="fa-brands fa-paypal"></i>
-                </span>
-
-                <span>
-                    <i class="fa-brands fa-apple-pay"></i>
-                    
+                <span  class="mobile-money">
+                    Airtel Money
                 </span>
 
                 <span class="mobile-money">
-                    Mobile Money
+                    AfriMoney
                 </span>
 
             </div>
