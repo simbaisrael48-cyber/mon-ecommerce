@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boutique</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
+
+<!-- NAVIGATION SMARTBRAIN BUSINESS -->
 <header class="navbar">
 
-    <!-- Logo -->
     <div class="logo">
         <div class="logo-text">
             <span>Smartbrain</span>
@@ -19,19 +21,46 @@
         </div>
     </div>
 
-    <!-- Navigation -->
-    <div class="link">
+    <!-- Bouton d'ouverture du menu mobile -->
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-controls="menuNavigation"
+        aria-expanded="false">
+        ☰
+    </button>
+
+    <!-- Menu de navigation -->
+    <div class="link" id="menuNavigation">
+
+        <div class="mobile-menu-header">
+            <div class="logo-text">
+                <span>Smartbrain</span>
+                <span>Business</span>
+            </div>
+
+            <button
+                class="close-menu"
+                id="closeMenu"
+                type="button"
+                aria-label="Fermer le menu">
+                X
+            </button>
+        </div>
+
         <ul class="nav-links">
-            <li><a href="produits.php">Accueil</a> </li>
+            <li><a href="produits.php">Accueil</a></li>
             <li><a href="boutique.php">Boutique</a></li>
             <li><a href="panier.php">Panier</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="avis-clients.php">Avis-clients</a></li>
+            <li><a href="avis-clients.php">Avis clients</a></li>
         </ul>
-    </div>
 
-</header><br><br><br><br><br><br>
-    
+    </div>
+</header>
+  
 <!-- Titre de la boutique -->
 <div class="title_boutique">
     <h1>Bienvenue dans notre <span>boutique</span></h1><br>
@@ -39,8 +68,7 @@
     <p>
         Découvrez notre sélection de matériels informatiques,
         électriques et électroniques.<br>
-        Trouvez facilement les équipements adaptés à vos besoins
-        et à vos projets.
+        
         
     </p>
 </div>
@@ -111,29 +139,7 @@ $resultat = $conn->query($sql);
 <footer class="footer">
 
     <!-- NEWSLETTER -->
-    <section class="newsletter">
-
-        <div class="newsletter-icone">
-            <i class="fa-solid fa-envelope"></i>
-        </div>
-
-        <div class="newsletter-form">
-
-            <input
-                type="email"
-                placeholder="Entrez votre adresse e-mail"
-            >
-
-            <button type="submit">
-                S'abonner
-            </button>
-
-        </div>
-
-    </section>
-
-    <br>
-
+    
     <!-- CONTENU DU FOOTER -->
 
     <section class="footer-content">
@@ -256,25 +262,34 @@ $resultat = $conn->query($sql);
 
         <div class="footer-column">
 
-            <h1>Paiements</h1>
+            <h1>
+                Paiements
+            </h1>
 
             <br>
+            
+            <ul>
 
-            <div class="payment-methods">
+                <li>
+                    <a href="#">
+                        Airtel Money
+                    </a>
+                </li>
 
-                <span  class="mobile-money">
-                    Orange Money
-                </span>
+                <li>
+                    <a href="#">
+                       Orange Money
+                    </a>
+                </li>
 
-                <span  class="mobile-money">
-                    Airtel Money
-                </span>
+                 <li>
+                    <a href="#">
+                       Afri Money
+                    </a>
+                </li>
 
-                <span class="mobile-money">
-                    AfriMoney
-                </span>
-
-            </div>
+            </ul>
+        </div>
 
         </div>
 

@@ -5,28 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="navbar">
+    
+<!-- NAVIGATION SMARTBRAIN BUSINESS -->
+<header class="navbar">
 
-        <div class="logo">
+    <div class="logo">
+        <div class="logo-text">
+            <span>Smartbrain</span>
+            <span>Business</span>
+        </div>
+    </div>
+
+    <!-- Bouton d'ouverture du menu mobile -->
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-controls="menuNavigation"
+        aria-expanded="false">
+        ☰
+    </button>
+
+    <!-- Menu de navigation -->
+    <div class="link" id="menuNavigation">
+
+        <div class="mobile-menu-header">
             <div class="logo-text">
-                <span>Smatbrain</span>
+                <span>Smartbrain</span>
                 <span>Business</span>
             </div>
+
+            <button
+                class="close-menu"
+                id="closeMenu"
+                type="button"
+                aria-label="Fermer le menu">
+                X
+            </button>
         </div>
 
-    <div class="link">
         <ul class="nav-links">
-            <li><a href="produits.php">Accueil</a> </li>
+            <li><a href="produits.php">Accueil</a></li>
             <li><a href="boutique.php">Boutique</a></li>
             <li><a href="panier.php">Panier</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="avis-clients.php">Avis-clients</a></li>
+            <li><a href="avis-clients.php">Avis clients</a></li>
         </ul>
-    </div>
 
-    </header><br><br><br>
+    </div>
+</header>
 
     <section id="section_contact">
 
@@ -79,6 +110,8 @@
 
     </section><br><br><br><br><br><br>
 
+    
+
 
     <!-- FOOTER -->
 
@@ -87,32 +120,7 @@
 
     <!-- NEWSLETTER -->
 
-    <section class="newsletter">
-
-        <div class="newsletter-icone">
-
-            <i class="fa-solid fa-envelope"></i>
-
-        </div>
-
-
-        <div class="newsletter-form">
-
-            <input
-                type="email"
-                placeholder="Entrez votre adresse e-mail"
-            >
-
-            <button type="submit">
-                S'abonner
-            </button>
-
-        </div>
-
-    </section>
-
-    <br>
-
+   
 
     <!-- CONTENU FOOTER -->
 
@@ -256,23 +264,30 @@
             </h1>
 
             <br>
+            
+            <ul>
 
-            <div class="payment-methods">
+                <li>
+                    <a href="#">
+                        Airtel Money
+                    </a>
+                </li>
 
+                <li>
+                    <a href="#">
+                       Orange Money
+                    </a>
+                </li>
 
-                <span  class="mobile-money">
-                    Orange Money
-                </span>
+                 <li>
+                    <a href="#">
+                       Afri Money
+                    </a>
+                </li>
 
-                <span  class="mobile-money">
-                    Airtel Money
-                </span>
+            </ul>
+        </div>
 
-                <span class="mobile-money">
-                    AfriMoney
-                </span>
-
-            </div>
 
         </div>
 

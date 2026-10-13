@@ -11,6 +11,8 @@ $resultat = $conn->query($sql);
     <meta charset="UTF-8">
 
     <title>Produits - Smartbrain Business</title>
+    
+    <script src="script.js" defer></script>
 
     <link rel="stylesheet" href="style.css">
 
@@ -24,31 +26,66 @@ $resultat = $conn->query($sql);
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
+
 <body>
 
 <!-- NAVIGATION  -->
 
+
+
+<!-- NAVIGATION SMARTBRAIN BUSINESS -->
 <header class="navbar">
 
     <div class="logo">
         <div class="logo-text">
-            <span>Smatbrain</span>
+            <span>Smartbrain</span>
             <span>Business</span>
         </div>
     </div>
 
-    <div class="link">
+    <!-- Bouton d'ouverture du menu mobile -->
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-controls="menuNavigation"
+        aria-expanded="false">
+        ☰
+    </button>
+
+    <!-- Menu de navigation -->
+    <div class="link" id="menuNavigation">
+
+        <div class="mobile-menu-header">
+            <div class="logo-text">
+                <span>Smartbrain</span>
+                <span>Business</span>
+            </div>
+
+            <button
+                class="close-menu"
+                id="closeMenu"
+                type="button"
+                aria-label="Fermer le menu">
+                X
+            </button>
+        </div>
+
         <ul class="nav-links">
-            <li><a href="produits.php">Accueil</a> </li>
+            <li><a href="produits.php">Accueil</a></li>
             <li><a href="boutique.php">Boutique</a></li>
             <li><a href="panier.php">Panier</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="avis-clients.php">Avis-client</a></li>
-            
+            <li><a href="avis-clients.php">Avis clients</a></li>
         </ul>
-    </div>
 
+    </div>
 </header>
+
+
+
+
 
 
 <!-- HERO  -->
@@ -362,31 +399,7 @@ $resultat = $conn->query($sql);
 <footer class="footer">
 
 
-    <!-- NEWSLETTER -->
 
-    <section class="newsletter">
-
-        <div class="newsletter-icone">
-
-            <i class="fa-solid fa-envelope"></i>
-
-        </div>
-
-
-        <div class="newsletter-form">
-
-            <input
-                type="email"
-                placeholder="Entrez votre adresse e-mail"
-            >
-
-            <button type="submit">
-                S'abonner
-            </button>
-
-        </div>
-
-    </section>
 
     <br>
 
@@ -533,22 +546,27 @@ $resultat = $conn->query($sql);
 
             <br>
 
-            <div class="payment-methods">
+            <ul>
 
-                <span  class="mobile-money">
-                    Orange Money
-                </span>
+                <li>
+                    <a href="#">
+                        Airtel Money
+                    </a>
+                </li>
 
-                <span  class="mobile-money">
-                    Airtel Money
-                </span>
+                <li>
+                    <a href="#">
+                       Orange Money
+                    </a>
+                </li>
 
-                <span class="mobile-money">
-                    AfriMoney
-                </span>
+                 <li>
+                    <a href="#">
+                       Afri Money
+                    </a>
+                </li>
 
-            </div>
-
+            </ul>
         </div>
 
 

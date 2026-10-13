@@ -105,6 +105,7 @@ $totalPanier = 0;
 
     <link rel="stylesheet" href="style.css">
 
+    <script src="script.js" defer></script>
 
 </head>
 
@@ -114,31 +115,56 @@ $totalPanier = 0;
 
 <!-- NAVBAR -->
 
+
+<!-- NAVIGATION SMARTBRAIN BUSINESS -->
 <header class="navbar">
 
     <div class="logo">
-
         <div class="logo-text">
-
-            <span>Smatbrain</span>
+            <span>Smartbrain</span>
             <span>Business</span>
-
         </div>
-
     </div>
 
+    <!-- Bouton d'ouverture du menu mobile -->
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-controls="menuNavigation"
+        aria-expanded="false">
+        ☰
+    </button>
 
-    <div class="link">
+    <!-- Menu de navigation -->
+    <div class="link" id="menuNavigation">
+
+        <div class="mobile-menu-header">
+            <div class="logo-text">
+                <span>Smartbrain</span>
+                <span>Business</span>
+            </div>
+
+            <button
+                class="close-menu"
+                id="closeMenu"
+                type="button"
+                aria-label="Fermer le menu">
+                X
+            </button>
+        </div>
+
         <ul class="nav-links">
-            <li><a href="produits.php">Accueil</a> </li>
+            <li><a href="produits.php">Accueil</a></li>
             <li><a href="boutique.php">Boutique</a></li>
             <li><a href="panier.php">Panier</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="avis-clients.php">Avis-client</a></li>
+            <li><a href="avis-clients.php">Avis clients</a></li>
         </ul>
+
     </div>
 </header>
-
 
 <!-- TITRE DU PANIER -->
 
