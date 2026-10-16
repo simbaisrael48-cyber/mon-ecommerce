@@ -280,7 +280,7 @@ html {
     padding: 0 30px;
     
 }
-
+    
 /* fin marge */
 
 .title h1{
@@ -1959,8 +1959,207 @@ form {
         color: #417eef;
     }
 
-    
+    /* texte page d'accueil */
 
+    .hero h1{
+        color:white;
+        font-size: 250%;
+    }
+    .hero h1 span{
+        color: #1265d3;
+    }
+
+    .hero p{
+        max-width: 850px;
+        margin: 0 auto 40px;
+        font-size: 18px;
+        line-height: 1.6;
+        color:white;
+    }
+
+    .hero-btn{
+
+        display: inline-block;
+        background: #417eef;
+        color: black;
+        padding: 15px 25px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+
+    }
+
+
+    .hero-btn:hover{
+        background-color: #1265d3;
+        transform: translateY(-2px);
+    }
+
+
+/* fin section accueil */
+
+
+    /* 4e Section des bloc de raison PAGE ACCUEIL*/
+
+     #section4{
+        display: grid;
+        text-align: center;
+        margin: auto;
+        border-radius: 13%;
+        height: 90%;
+        width: 100%;
+        gap: 10px;
+        /* grid-template-columns: repeat(1, 1fr); */
+   
+    }
+    
+    .choisir h4{
+        text-align: center;
+        font-size: 200%;
+        margin-bottom: 4%;
+    }
+    .choisir p {
+        /* margin-top: %; */
+        text-align: center;
+        font-size: 110%;
+        margin-bottom: 5%;
+        
+    }
+    .icone h3 {
+        font-size: 119%;
+        text-align: left;
+        /* margin-top: 10px; */
+        margin: 5%;
+    }
+
+    .icone p {
+        font-size: 107%;
+        text-align: left;
+        /* margin: 10px 0; */
+        margin: 10%;
+    }
+
+    .icone{
+        background-color: rgb(254, 254, 253);
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        width: 85%;
+        margin:auto;
+        /* grid-template-columns: repeat(1, 1fr); */
+    }
+    .icone img{
+        width: 20%;
+        height: 65%;
+        background: #eaf3ff;
+        padding: 10px;
+        border-radius: 40%;
+        margin-top: 5%;
+    }   
+
+    
+    /* 41e Section des bloc de raison PAGE ACCUEIL*/
+
+     #section41 {
+        display: grid;
+        text-align: center;
+        margin: auto;
+        border-radius: 13%;
+        height: 90%;
+        width: 100%;
+        gap: 10px;
+        /* grid-template-columns: repeat(1, 1fr); */
+   
+    }
+    
+    .choisir h4{
+        text-align: center;
+        font-size: 200%;
+        margin-bottom: 4%;
+    }
+    .choisir p {
+        /* margin-top: %; */
+        text-align: center;
+        font-size: 110%;
+        margin-bottom: 5%;
+        
+    }
+    .iconee h3 {
+        font-size: 119%;
+        text-align: left;
+        /* margin-top: 10px; */
+        margin: 5%;
+    }
+
+    .iconee p {
+        font-size: 107%;
+        text-align: left;
+        /* margin: 10px 0; */
+        margin: 10%;
+    }
+
+    .iconee{
+        background-color: rgb(254, 254, 253);
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        width: 85%;
+        margin:auto;
+        /* grid-template-columns: repeat(1, 1fr); */
+    }
+    .iconee img{
+        width: 20%;
+        height: 65%;
+        background: #eaf3ff;
+        padding: 10px;
+        border-radius: 40%;
+        margin-top: 5%;
+    }   
+
+
+    /* SECTION 3 PAGE   ACCUEIL */
+
+    #section3 {
+        background: #041b54fc;
+        max-width: 100%;
+        text-align: center;
+        max-height: 990%;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        
+
+    }
+    #section3 p{
+
+        text-align: center;
+        color: white;
+        font-size: 80%;
+        margin-bottom: 10%;
+
+    }
+    #section3 h1{
+        color: white;
+        font-size: 187%;
+        font-weight: normal;
+
+    }   
+    #section3 button{
+        background: #417eef;
+        color:white;
+        padding: 17px 29px;
+        height: 100%;
+        border: none;
+        border-radius: 9px;
+        font-weight: bolder;
+    }
+
+    #section3 button:hover{ 
+        background: black;    
+        transform: scale(1.05);
+    }
+    #section3 a {
+        text-decoration: none;
+        color: white;
+        font-size: 120%;
+    }
 
 
 
@@ -1968,6 +2167,16 @@ form {
 /* PAGE D'ACCUEIL */
 
     /* ---------- ACCUEIL : plein écran + centré ---------- */
+    .title h1{
+        text-align: center;
+        font-size: 250%;
+        margin-bottom: 20px;
+    }
+
+    .title p{
+        text-align: center;
+        font-size: 130%;
+    }
 
 
     /* ---------- PRODUITS : cartes côte à côte ---------- */
@@ -1993,6 +2202,7 @@ form {
         width: 100%;
         grid-template-columns: repeat(1, 1fr);
         gap: 15px;
+        margin-bottom: 32px;
     }
 
     /* la carte encadre son contenu et le bouton reste dedans */
@@ -2042,6 +2252,7 @@ form {
     /* ---------- FOOTER : centré, sans flex ---------- */
         .newsletter {
         text-align: center;
+        margin-bottom: 50px;
         
     }
 
@@ -2064,6 +2275,7 @@ form {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 25px;
+        margin-bottom: 50px;
     }
 
     .payment-methods {
@@ -2072,9 +2284,11 @@ form {
 
     .footer-bottom {
         text-align: center;
+        
     }
     .footer-column_boutique {
         margin-top: 15%;
+        
     }
     
     

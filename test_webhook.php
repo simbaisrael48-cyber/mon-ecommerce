@@ -2,7 +2,7 @@
 
 require "config/unipay.php";
 
-$url = "https://vernon-resulted-reproduction-detroit.trycloudflare.com/mon-ecommerce/webhooks/unipay.php";
+$url = "https://attractive-template-employed-daniel.trycloudflare.com/mon-ecommerce/webhooks/unipay.php";
 
 $data = [
     "transaction_id" => "TEST-123456",

@@ -558,30 +558,66 @@ if (preg_match('/^0[0-9]{9}$/', $numero_paiement)) {
 
 </head>
 <body>
-    <header class="navbar">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- NAVIGATION SMARTBRAIN BUSINESS -->
+<header class="navbar">
 
     <div class="logo">
         <div class="logo-text">
-            <span>Smatbrain</span>
+            <span>Smartbrain</span>
             <span>Business</span>
         </div>
     </div>
 
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <!-- Bouton d'ouverture du menu mobile -->
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-controls="menuNavigation"
+        aria-expanded="false">
+        ☰
+    </button>
 
-    <div class="link">
+    <!-- Menu de navigation -->
+    <div class="link" id="menuNavigation">
+
+        <div class="mobile-menu-header">
+            <div class="logo-text">
+                <span>Smartbrain</span>
+                <span>Business</span>
+            </div>
+
+            <button
+                class="close-menu"
+                id="closeMenu"
+                type="button"
+                aria-label="Fermer le menu">
+                X
+            </button>
+        </div>
+
         <ul class="nav-links">
-            <li><a href="produits.php">Accueil</a> </li>
+            <li><a href="index.php">Accueil</a></li>
             <li><a href="boutique.php">Boutique</a></li>
             <li><a href="panier.php">Panier</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="avis-clients.php">Avis-client</a></li>
-            
+            <li><a href="avis-clients.php">Avis clients</a></li>
         </ul>
+
     </div>
-
 </header>
-
+</body>
+</html>
 <div class="commande-container">
 
     <div class="commande-box">

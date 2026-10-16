@@ -156,7 +156,7 @@ $totalPanier = 0;
         </div>
 
         <ul class="nav-links">
-            <li><a href="produits.php">Accueil</a></li>
+            <li><a href="index.php">Accueil</a></li>
             <li><a href="boutique.php">Boutique</a></li>
             <li><a href="panier.php">Panier</a></li>
             <li><a href="contact.php">Contact</a></li>
